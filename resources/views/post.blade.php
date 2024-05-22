@@ -11,11 +11,7 @@
 
     <body>
         <article>
-            <h1><a href="/post">My First Post</a></h1>
-
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, voluptas? Saepe quod optio minima at inventore officia ipsa quibusdam facilis fugiat sequi quos eum, maiores laboriosam eveniet tenetur architecto ratione?
-            </p>
+            <?= $post;?>
         </article>
 
         <a href="/">Go Back</a>
