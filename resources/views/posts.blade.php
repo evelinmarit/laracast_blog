@@ -10,28 +10,10 @@
     </head>
 
     <body>
-        <article>
-            <h1><a href="/posts/my-first-post">My First Post</a></h1>
-
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, voluptas? Saepe quod optio minima at inventore officia ipsa quibusdam facilis fugiat sequi quos eum, maiores laboriosam eveniet tenetur architecto ratione?
-            </p>
-        </article>
-
-        <article>
-            <h1><a href="/posts/my-second-post">My Second Post</a></h1>
-
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, voluptas? Saepe quod optio minima at inventore officia ipsa quibusdam facilis fugiat sequi quos eum, maiores laboriosam eveniet tenetur architecto ratione?
-            </p>
-        </article>
-
-        <article>
-            <h1><a href="/posts/my-third-post">My Third Post</a></h1>
-
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, voluptas? Saepe quod optio minima at inventore officia ipsa quibusdam facilis fugiat sequi quos eum, maiores laboriosam eveniet tenetur architecto ratione?
-            </p>
-        </article>
+        <?php foreach ($posts as $post) : ?>
+            <article>
+                <?= $post; ?>
+            </article>
+        <?php endforeach; ?>
 
     </body>
