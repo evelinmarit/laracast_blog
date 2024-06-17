@@ -37,7 +37,7 @@
 </x-panel>
 
 @else
-    <p class="font-semibold">
+    <p class="font-">
         <a href="/register" class="hover:underline">Register</a> or <a href="/login" class="hover:underline">Log in to leave a comment</a>
     </p>
 
