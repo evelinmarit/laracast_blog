@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
+use Symfony\Component\HttpFoundation\Response;
 
 class PostController extends Controller
 {
@@ -23,5 +24,15 @@ class PostController extends Controller
         ]);
     }
 
+    public function create() {
+        if (auth()->guest()) {
+            //abort(483);
+            abort(Response::HTTP_FORBIDDEN);
+        }
 
+        if (auth()->user()->username === 'evelineve') {
+            abort(Response::HTTP_FORBIDDEN);
+        }
+        return view('posts.create');
+    }
 }
