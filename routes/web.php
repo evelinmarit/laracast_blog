@@ -13,7 +13,7 @@ use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\NewsletterController;
 use Illuminate\Validation\ValidationException;
 use App\Http\Controllers\PostCommentsController;
-
+use App\Http\Middleware\MustBeAdministrator;
 
 Route::get('/', [PostController::class, 'index'])->name('home');
 Route::get("posts/{post:slug}", [PostController::class, 'show']);
@@ -28,4 +28,6 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
-Route::get('admin/posts/create', [PostController::class, 'create']);
+Route::get('admin/posts/create', [PostController::class, 'create'])->middleware(MustBeAdministrator::class);
+
+Route::post('admin/posts', [PostController::class, 'store'])->middleware(MustBeAdministrator::class);
