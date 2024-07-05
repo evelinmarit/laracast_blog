@@ -4,6 +4,7 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
 use App\Services\Newsletter;
+use MailchimpMarketing\ApiClient;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
@@ -15,6 +16,7 @@ use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\NewsletterController;
 use Illuminate\Validation\ValidationException;
 use App\Http\Controllers\PostCommentsController;
+
 
 Route::get('/', [PostController::class, 'index'])->name('home');
 Route::get("posts/{post:slug}", [PostController::class, 'show']);
